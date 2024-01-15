@@ -1,0 +1,27 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    padding: 20px;
+}
+
+.sun {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, yellow, orange, red);
+    border-radius: 50%;
+    box-shadow: 0 0 50px yellow;
+    animation: shine 2s infinite alternate;
+}
+
+@keyframes shine {
+    0% {
+        box-shadow: 0 0 10px yellow;
+    }
+    100% {
+        box-shadow: 0 0 80px yellow;
+    }
+}

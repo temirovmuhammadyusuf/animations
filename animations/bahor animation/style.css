@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #d0f4de;
+  }
+  
+  .gul {
+    width: 0;
+    height: 0;
+    background-color: pink; 
+    border-radius: 50%;
+    animation: osish 5s forwards;
+  }
+  
+  /* Animatsiya kaliti */
+  @keyframes osish {
+    to {
+      width: 100px; 
+      height: 100px; 
+    }
+  }  

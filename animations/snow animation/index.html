@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Snow Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        @keyframes fall {
+            0% {
+                top: -50px;
+                opacity: 1;
+            }
+
+            100% {
+                top: 93vh;
+                opacity: 0;
+            }
+        }
+
+        .snowflake {
+            position: absolute;
+            color: white;
+            user-select: none;
+            z-index: 1000;
+            animation-name: fall;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="snow"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var snowflakeContainer = document.body;
+
+    function createSnowflake() {
+        var snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowflake.innerHTML = '❄️';
+        snowflake.style.left = Math.random() * 100 + 'vw';
+        snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+        snowflake.style.fontSize = Math.random() * 15 + 9 + 'px';
+
+        snowflakeContainer.appendChild(snowflake);
+
+        // Qor parchasini animatsiya davomiyligiga qarab o'chirish
+        setTimeout(function() {
+            snowflake.remove();
+        }, (parseFloat(snowflake.style.animationDuration) * 1000));
+    }
+
+    setInterval(createSnowflake, 100);
+});
+
+    </script>
+</body>
+
+</html>

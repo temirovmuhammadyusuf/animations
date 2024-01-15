@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Leaf Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        @keyframes fall {
+            0% {
+                top: -50px;
+                opacity: 1;
+            }
+
+            100% {
+                top: 93vh;
+                opacity: 0;
+            }
+        }
+
+        .leaf {
+            position: absolute;
+            color: white;
+            user-select: none;
+            z-index: 1000;
+            animation-name: fall;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Leaf"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var leafContainer = document.body;
+
+    function createleaf() {
+        var leaf = document.createElement('div');
+        leaf.classList.add('leaf');
+        leaf.innerHTML = '🍁';
+        leaf.style.left = Math.random() * 100 + 'vw';
+        leaf.style.animationDuration = Math.random() * 3 + 2 + 's';
+        leaf.style.fontSize = Math.random() * 15 + 9 + 'px';
+
+        leafContainer.appendChild(leaf);
+
+        // Qor parchasini animatsiya davomiyligiga qarab o'chirish
+        setTimeout(function() {
+            leaf.remove();
+        }, (parseFloat(leaf.style.animationDuration) * 1000));
+    }
+
+    setInterval(createleaf, 100);
+});
+
+    </script>
+</body>
+
+</html>
